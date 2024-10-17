@@ -1,8 +1,9 @@
 // models/chartData.js
 const mongoose = require('mongoose');
 
+// Modify userId to reference the Lead's ID field
 const chartDataSchema = new mongoose.Schema({
-  userId: { type: Number, required: true },
+  userId: { type: String, ref: 'Lead', required: true}, // Reference Lead ID
   lineData: {
     labels: { type: [String], required: true },
     values: { type: [Number], required: true },

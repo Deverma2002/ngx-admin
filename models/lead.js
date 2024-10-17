@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const leadSchema = new mongoose.Schema({
-  ID: Number,
+  // ID: Number,
   firstName: String,
   lastName: String,
   userName: String,
