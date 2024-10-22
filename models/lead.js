@@ -1,13 +1,13 @@
+// models/lead.js
 const mongoose = require('mongoose');
 
 const leadSchema = new mongoose.Schema({
-  // ID: Number,
   firstName: String,
   lastName: String,
   userName: String,
   email: String,
   age: Number,
-  // Add any other lead-related fields
+  userId: { type: String, ref: 'User', required: true }, // Reference to User as String
 }, {
   timestamps: true,
 });

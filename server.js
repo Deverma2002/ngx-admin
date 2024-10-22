@@ -6,6 +6,8 @@ const leadRoutes = require('./routes/lead.routes');
 const chartData = require('./routes/chartData.routes');
 const cors = require('cors'); 
 const ChartData = require('./models/chartData');
+const authRoutes = require('./routes/auth.routes');
+
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -20,6 +22,7 @@ connectDB();
 // Define routes
 app.use('/api/leads', leadRoutes);
 app.use('/api/chartdata', chartData);
+app.use('/api/auth', authRoutes);
 
 // Start the server
 app.listen(PORT, () => {
